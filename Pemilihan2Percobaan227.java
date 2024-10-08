@@ -2,7 +2,8 @@ import java.util.Scanner;
 public class Pemilihan2Percobaan227 {
     public static void main(String[] args) {
         Scanner input27 = new Scanner(System.in);
-        String member;
+
+        String member, metodePembayaran;
         int jumlahBeli, pilihanMenu;
         double totalBayar, diskon, harga;
 
@@ -18,6 +19,8 @@ public class Pemilihan2Percobaan227 {
         input27.nextLine();
         System.out.print("Apakah punya member (y/n) ? = ");
         member = input27.nextLine();
+        System.out.print("Masukkan Metode Pembayaran = ");
+        metodePembayaran = input27.nextLine();
         System.out.println("-------------------------------------");
         
         if (member.equalsIgnoreCase("y")) {
@@ -41,6 +44,8 @@ public class Pemilihan2Percobaan227 {
             
             }
             totalBayar = harga - (harga * diskon);
+            if(metodePembayaran.equalsIgnoreCase("qris"))
+                totalBayar = totalBayar - 1000;
             System.out.println("Total bayar setelah diskon = " + totalBayar);
             
         }
@@ -61,6 +66,9 @@ public class Pemilihan2Percobaan227 {
                 System.out.println("Masukkan pilihan menu dengan benar");
                 return;
             }
+            totalBayar = harga;
+            if(metodePembayaran.equalsIgnoreCase("qris"))
+            totalBayar = totalBayar - 1000;
             System.out.println("Total bayar = " + harga);
                 
             }
